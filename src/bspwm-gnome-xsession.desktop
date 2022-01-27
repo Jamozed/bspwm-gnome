@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=bspwm-GNOME
+Exec=bspwm-gnome-session
+TryExec=bspwm-gnome
+DesktopNames=GNOME
+X-Ubuntu-Gettext-Domain=gnome-session-3.0
