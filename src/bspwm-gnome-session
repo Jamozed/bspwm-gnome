@@ -1,2 +1,2 @@
 #!/usr/bin/env sh
-gnome-session --session=bspwm-gnome "$@"
+gnome-session --builtin --session=bspwm-gnome "$@"

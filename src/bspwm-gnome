@@ -2,13 +2,15 @@
 
 # Register bspwm-gnome with gnome-session
 if [ -n "$DESKTOP_AUTOSTART_ID" ]; then
-	dbus-send --print-reply --dest=org.gnome.SessionManager /org/gnome/SessionManager org.gnome.SessionManager.RegisterClient string:bspwm-gnome string:"$DESKTOP_AUTOSTART_ID"
+	dbus-send --print-reply --session --dest=org.gnome.SessionManager "/org/gnome/SessionManager" org.gnome.SessionManager.RegisterClient "string:bspwm-gnome" "string:$DESKTOP_AUTOSTART_ID"
 fi
 
 # Merge .Xresources if it exists
-if [ -e "$HOME/.Xresources" ]; then xrdb -merge "$HOME/.Xresources"; fi
+#if [ -e "$HOME/.Xresources" ]; then xrdb -merge "$HOME/.Xresources"; fi
 
-# Logout?
+bspwm
+
+# Send a logout message
 if [ -n "$DESKTOP_AUTOSTART_ID" ]; then
-	dbus-send --print-reply --dest=org.gnome.SessionManager /org/gnome/SessionManager org.gnome.SessionManager.Logout uint32:1
+	dbus-send --print-reply --session --dest=org.gnome.SessionManager "/org/gnome/SessionManager" org.gnome.SessionManager.Logout "uint32:1"
 fi

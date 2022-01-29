@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Name=bspwm-GNOME
+Name=bspwm on GNOME
 Exec=bspwm-gnome-session
 TryExec=bspwm-gnome
 DesktopNames=GNOME

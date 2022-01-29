@@ -2,15 +2,17 @@
 pkgname=bspwm-gnome
 pkgver=20220127
 pkgrel=1
-pkgdesc="bspwm GNOME session integration"
+pkgdesc="bspwm with GNOME session integration"
 arch=('any')
-url=""
+url="https://github.com/Jamozed/bspwm-gnome"
 license=('unknown')
 depends=(
 	'bspwm'
 	'gnome-session'
 	'gnome-settings-daemon'
 )
+provides=('bspwm-gnome')
+conflicts=('bspwm-gnome')
 
 package() {
 	install -m0755 -D "bspwm-gnome" "$pkgdir/usr/bin/bspwm-gnome"
